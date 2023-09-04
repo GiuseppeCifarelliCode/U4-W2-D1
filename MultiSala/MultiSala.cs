@@ -52,6 +52,7 @@ namespace MultiSala
             }
             catch {
                 Console.WriteLine("L'opzione inserita non esiste");
+                Menu() ;
             }
         }
 
@@ -74,7 +75,15 @@ namespace MultiSala
                         Sala nuovaPrenotazione = new Sala(nome, cognome);
                         Console.WriteLine("Il biglietto è ridotto? y/n");
                         string risposta = Console.ReadLine().ToLower();
-                        if (risposta == "y") nuovaPrenotazione.TicketRidotto = true;
+                        if (risposta == "y")
+                        {
+                            nuovaPrenotazione.TicketRidotto = true;
+                            Console.WriteLine("Hai preso il biglietto ridotto");
+                        }
+                        else {
+                            nuovaPrenotazione.TicketRidotto = false;
+                            Console.WriteLine("Hai preso il biglietto intero");
+                        }
                         PostiRimastiNord -= 1;
                         SalaNord.Add(nuovaPrenotazione);
                         Console.WriteLine($"Sono rimasti {PostiRimastiNord} posti nella sala NORD");                       
@@ -84,7 +93,16 @@ namespace MultiSala
                         Sala nuovaPrenotazione2 = new Sala(nome, cognome);
                         Console.WriteLine("Il biglietto è ridotto? y/n");
                         string risposta2 = Console.ReadLine().ToLower();
-                        if (risposta2 == "y") nuovaPrenotazione2.TicketRidotto = true;
+                        if (risposta2 == "y")
+                        {
+                            nuovaPrenotazione2.TicketRidotto = true;
+                            Console.WriteLine("Hai preso il biglietto ridotto");
+                        }
+                        else
+                        {
+                            nuovaPrenotazione2.TicketRidotto = false;
+                            Console.WriteLine("Hai preso il biglietto intero");
+                        }
                         PostiRimastiEst -= 1;
                         SalaEst.Add(nuovaPrenotazione2);
                         Console.WriteLine($"Sono rimasti {PostiRimastiEst} posti nella sala EST");
@@ -94,7 +112,16 @@ namespace MultiSala
                         Sala nuovaPrenotazione3 = new Sala(nome, cognome);
                         Console.WriteLine("Il biglietto è ridotto? y/n");
                         string risposta3 = Console.ReadLine().ToLower();
-                        if (risposta3 == "y") nuovaPrenotazione3.TicketRidotto = true;
+                        if (risposta3 == "y")
+                        {
+                            nuovaPrenotazione3.TicketRidotto = true;
+                            Console.WriteLine("Hai preso il biglietto ridotto");
+                         }
+                        else
+                        {
+                            nuovaPrenotazione3.TicketRidotto = false;
+                            Console.WriteLine("Hai preso il biglietto intero");
+                        }
                         PostiRimastiSud -= 1;
                         SalaSud.Add(nuovaPrenotazione3);
                         Console.WriteLine($"Sono rimasti {PostiRimastiSud} posti nella sala SUD");
@@ -106,7 +133,10 @@ namespace MultiSala
                         break;
                 }
             }
-            catch { Console.WriteLine("L'opzione inserita non esiste"); }
+            catch { 
+                Console.WriteLine("L'opzione inserita non esiste");
+                Menu();
+            }
             
         }
 

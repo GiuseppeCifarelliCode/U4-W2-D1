@@ -11,7 +11,6 @@ namespace MultiSala
         static void Main(string[] args)
         {
             MultiSala.Menu();
-            Console.ReadLine();
         }
     }
 }
